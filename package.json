@@ -1,0 +1,18 @@
+{
+  "name": "hello-human-bot",
+  "version": "0.0.1",
+  "description": "my new bot",
+  "main": "index.js",
+  "dependencies": {
+    "botpress": "0.x",
+    "botpress-api.ai": "^2.0.5",
+    "botpress-messenger": "^2.0.6",
+    "botpress-scheduler": "^2.0.5"
+  },
+  "scripts": {
+    "start": "botpress start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rodrigo Ibarra",
+  "license": "AGPL-3.0"
+}
