@@ -1,0 +1,35 @@
+html
+    head
+        title= title
+        style
+            include ../css/style.css
+        script (href="path/to/font-awesome/css/font-awesome.min.css")
+    body
+        div.left
+            div.separador
+                a.logo
+                    div.logoHead
+                        img(src='http://i68.tinypic.com/o0nns8.png')
+                nav
+                    div
+                        div
+                            a.logo
+                                img.fotoPerfil(src=foto_perfil)
+                                h4.nombre= nombre + apellido
+                ul.nav.nav-pills-pull-right
+                    li.elements
+                        a(href='/horario').fa-li.fa.fa-facebook Horario
+                    |
+                    li.elements
+                        a(href='/todos') ToDo's
+                    |
+                    li.elements
+                        a(href='/goals') Goals
+        div.right
+            header
+                h3= title
+
+
+
+
+            //h3= nombre_usuario

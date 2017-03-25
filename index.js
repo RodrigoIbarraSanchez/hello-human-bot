@@ -75,6 +75,7 @@ module.exports = function(bp) {
         bp.messenger.sendAttachment(userId, type, url)
     })
 
+
     //Para que conteste cuando el usuario escribe cualquier cosa
     /*bp.hear({
         platform: 'facebook',
