@@ -41,8 +41,8 @@
       <file leaf-file-name="botfile.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/botfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="38" column="37" lean-forward="false" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="37" />
+            <state relative-caret-position="-703">
+              <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -134,6 +134,7 @@
       <find>deme</find>
       <find>nom</find>
       <find>postgres</find>
+      <find>sqel</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -285,12 +286,12 @@
       <workItem from="1489940121506" duration="4340000" />
       <workItem from="1490051749673" duration="13558000" />
       <workItem from="1490204261088" duration="1156000" />
-      <workItem from="1490210040867" duration="18635000" />
+      <workItem from="1490210040867" duration="19005000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37689000" />
+    <option name="totallyTimeSpent" value="38059000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -494,8 +495,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/botfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="38" column="37" lean-forward="false" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="37" />
+        <state relative-caret-position="-703">
+          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
           <folding />
         </state>
       </provider>
