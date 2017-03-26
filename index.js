@@ -62,7 +62,7 @@ module.exports = function(bp) {
     bp.hear(/gif/i, (event, next) => { // We use a regex instead of a hardcoded string
         const userId = event.user.id
         const type = 'image'
-        const url = 'http://gph.is/2da2d7Y'
+        const url = 'https://media.giphy.com/media/tZ9baZRizt3pu/giphy.gif'
 
         bp.messenger.sendAttachment(userId, type, url)
     })
