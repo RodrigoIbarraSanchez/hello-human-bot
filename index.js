@@ -1,5 +1,7 @@
+var BotpressBot = require('botpress-botkit').BotpressBot;
 module.exports = function(bp) {
     bp.middlewares.load()
+
     //Mostramos el Horario por medio de la palabra "Horario"
     bp.hear(/horario/i, (event, next) => { // We use a regex instead of a hardcoded string
         const userId = event.user.id
@@ -8,21 +10,25 @@ module.exports = function(bp) {
 
         bp.messenger.sendAttachment(userId, type, url)
     })
-    //Mostramos respuesta y botones con el texto en la constante "text"
-    bp.hear(/opciones/i, (event, next) => { // We use a regex instead of a hardcoded string
+    bp.hear(/Que puedes hacer por mi/i, (event, next) => {
         const userId = event.user.id
-        const text = "Select between these two options?"
+        const text = "Puedo:"
         const options = {
             quick_replies: [
                 {
                     content_type: "text",
-                    title: "Option 1",
-                    payload: "DEVELOPER_DEFINED_PAYLOAD_FOR_OPTION_1"
+                    title: "opción uno",
+                    payload: 'Elegiste opción 1'
                 },
                 {
                     content_type:"text",
-                    title:"Option 2",
-                    payload: "DEVELOPER_DEFINED_PAYLOAD_FOR_OPTION_2"
+                    title:"opción uno",
+                    payload: 'Elegiste opción 2'
+                },
+                {
+                    content_type:"text",
+                    title:"opción tres",
+                    payload: 'Elegiste opción 3'
                 }
             ],
             typing: true,
@@ -32,9 +38,12 @@ module.exports = function(bp) {
         bp.messenger.sendText(userId, text, options)
         .then(() => {
         // the message was read because of `waitRead` option
-        })
     })
-    bp.hear(/sitio web/i, (event, next) => { // We use a regex instead of a hardcoded string
+
+
+
+    })
+    bp.hear(/informacion/i, (event, next) => { // We use a regex instead of a hardcoded string
         const userId = event.user.id
         const payload = {
             template_type: "button",
@@ -67,7 +76,7 @@ module.exports = function(bp) {
         bp.messenger.sendAttachment(userId, type, url)
     })
 
-    bp.hear(/hamburguesa/i, (event, next) => {
+    bp.hear(/imagen/i, (event, next) => {
         const userId = event.user.id
         const type = 'image'
         const url = 'http://static.tvazteca.com/imagenes/2015/22/hamburguesa-1984023.jpg'
@@ -77,11 +86,11 @@ module.exports = function(bp) {
 
 
     //Para que conteste cuando el usuario escribe cualquier cosa
-    /*bp.hear({
+    bp.hear({
         platform: 'facebook',
         type: 'message',
         text: /.+/i
     }, (event, next) => {
-        bp.messenger.sendText(event.user.id, "Sorry, I only answer to 'hello world'...")
-    })*/
+        bp.messenger.sendText(event.user.id, "Lo siento, no pude entenderte, puedes decirmelo de otra manera?")
+    })
 }
