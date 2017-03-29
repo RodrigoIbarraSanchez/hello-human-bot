@@ -1,6 +1,21 @@
-var BotpressBot = require('botpress-botkit').BotpressBot;
+const Promise = require('bluebird')
 module.exports = function(bp) {
     bp.middlewares.load()
+
+    bp.hear({ type: 'postback', text: 'GET_STARTED' }, (event) => {
+
+        const WELCOME_SENTENCES = [
+            "Message 1",
+            "Message 2",
+            "Message 3"
+        ]
+
+        Promise.mapSeries(WELCOME_SENTENCES, message => {
+            bp.messenger.sendText(event.user.id, message, { typing: true })
+            return Promise.delay(4000)
+        })
+
+    })
 
     //Mostramos el Horario por medio de la palabra "Horario"
     bp.hear(/horario/i, (event, next) => { // We use a regex instead of a hardcoded string
@@ -18,17 +33,17 @@ module.exports = function(bp) {
                 {
                     content_type: "text",
                     title: "opción uno",
-                    payload: 'Elegiste opción 1'
+                    payload: 'DEVELOPER_DEFINED_PAYLOAD_FOR_OPTION_1'
                 },
                 {
                     content_type:"text",
                     title:"opción uno",
-                    payload: 'Elegiste opción 2'
+                    payload: 'DEVELOPER_DEFINED_PAYLOAD_FOR_OPTION_2'
                 },
                 {
                     content_type:"text",
                     title:"opción tres",
-                    payload: 'Elegiste opción 3'
+                    payload: 'DEVELOPER_DEFINED_PAYLOAD_FOR_OPTION_3'
                 }
             ],
             typing: true,
@@ -37,7 +52,9 @@ module.exports = function(bp) {
 
         bp.messenger.sendText(userId, text, options)
         .then(() => {
-        // the message was read because of `waitRead` option
+            bp.hear({platform: 'facebook', type: 'postback', text: 'DEVELOPER_DEFINED_PAYLOAD_FOR_OPTION_1'}, (event) => {
+                bp.messenger.sendText(event.user.id, 'Elegiste la opción 1!');
+            });
     })
 
 
@@ -86,11 +103,11 @@ module.exports = function(bp) {
 
 
     //Para que conteste cuando el usuario escribe cualquier cosa
-    bp.hear({
+    /*bp.hear({
         platform: 'facebook',
         type: 'message',
         text: /.+/i
     }, (event, next) => {
         bp.messenger.sendText(event.user.id, "Lo siento, no pude entenderte, puedes decirmelo de otra manera?")
-    })
+    })*/
 }
