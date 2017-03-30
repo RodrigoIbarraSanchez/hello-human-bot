@@ -9,7 +9,8 @@
     "botpress-botkit": "^1.0.5",
     "botpress-messenger": "^2.0.6",
     "botpress-rivescript": "^2.0.5",
-    "botpress-scheduler": "^2.0.5"
+    "botpress-scheduler": "^2.0.5",
+    "mongoose": "^4.9.2"
   },
   "scripts": {
     "start": "botpress start",

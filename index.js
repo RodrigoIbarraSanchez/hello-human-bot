@@ -2,20 +2,86 @@ const Promise = require('bluebird')
 module.exports = function(bp) {
     bp.middlewares.load()
 
-    bp.hear({ type: 'postback', text: 'GET_STARTED' }, (event) => {
+    /*bp.hear({ type: 'postback', text: 'GET_STARTED' }, (event) => {
+
+        const userId = event.user.id
+        const type = 'image'
+        const url = 'https://media.giphy.com/media/tZ9baZRizt3pu/giphy.gif'
 
         const WELCOME_SENTENCES = [
-            "Message 1",
-            "Message 2",
-            "Message 3"
+            "Soy un asistente virtual y estoy aquí para ayudarte.",
+            "No soy humano, pero puedo ayudarte a hacer tu vida más productiva.",
+            "Se que tienes cosas muy importantes por hacer, así que por eso estoy aquí para ayudarte en lo que sea que necesites.",
+            "Puedo leerte, así que puedes escribirme para decirme tus actividades, yo me encargaré de que aproveches tu tiempo libre.",
+            "También puedes escribirme si necesitas que te recuerde algo y yo te escribiré de vuelta para recordarte."
         ]
 
         Promise.mapSeries(WELCOME_SENTENCES, message => {
             bp.messenger.sendText(event.user.id, message, { typing: true })
-            return Promise.delay(4000)
+            return Promise.delay(7500)
+        })
+
+    })*/
+    bp.hear({ type: 'postback', text: 'GET_STARTED' }, (event) => {
+
+        const WELCOME_SENTENCES = [
+            function(){
+                bp.messenger.sendText(event.user.id, "Soy un asistente virtual y estoy aquí para ayudarte.", { typing: true })
+            },
+            function(){
+                bp.messenger.sendAttachment(event.user.id, 'image', 'https://media.giphy.com/media/tZ9baZRizt3pu/giphy.gif')
+            },
+            function(){
+                bp.messenger.sendText(event.user.id, "No soy humano, pero puedo ayudarte a hacer tu vida más productiva.", { typing: true })
+            },
+            function () {
+                bp.messenger.sendText(event.user.id, "Se que tienes cosas muy importantes por hacer, así que por eso estoy aquí para ayudarte en lo que sea que necesites.", { typing:true })
+            },
+            function () {
+                bp.messenger.sendText(event.user.id, "Puedo leerte, así que puedes escribirme para decirme tus actividades, yo me encargaré de que aproveches tu tiempo libre.", { typing:true })
+            },
+            function () {
+                bp.messenger.sendAttachment(event.user.id, 'image', 'https://media.giphy.com/media/5VKbvrjxpVJCM/giphy.gif')
+            },
+            function () {
+                bp.messenger.sendText(event.user.id, "También puedes escribirme si necesitas que te recuerde algo y yo te escribiré de vuelta para recordarte.")
+            }
+        ]
+
+        Promise.mapSeries(WELCOME_SENTENCES, messageFunction => {
+            messageFunction();
+            return Promise.delay(7500)
         })
 
     })
+    // Guardar una imagen
+    /*bp.hear({ platform: 'facebook', type: 'postback', text: 'GET_STARTED' }, (event, next) => {
+
+        // Send a reusable image at Get_Started postback
+        bp.messenger.sendAttachment(
+            event.user.id,
+            'image',
+            'https://images.unsplash.com/photo-1433162653888-a571db5ccccf',
+            { isReusable: true }
+            ).then(res => {
+                bp.db.kvs.set('attachHelloWorld', res.attachment_id);
+            });
+
+        })
+
+            bp.hear({ type: 'message', text: /.+/i }, (event, next) => {
+                bp.messenger.sendText(event.user.id, 'hmm.. how about the same image?');
+
+            // Send the reusable image
+            var attachHelloWorld = bp.db.kvs.get('attachHelloWorld');
+
+            bp.messenger.sendAttachment(
+                event.user.id,
+                'image',
+                null,
+                { attachment_id: attachHelloWorld }
+            );
+        })*/
 
     //Mostramos el Horario por medio de la palabra "Horario"
     bp.hear(/horario/i, (event, next) => { // We use a regex instead of a hardcoded string
@@ -99,6 +165,11 @@ module.exports = function(bp) {
         const url = 'http://static.tvazteca.com/imagenes/2015/22/hamburguesa-1984023.jpg'
 
         bp.messenger.sendAttachment(userId, type, url)
+    })
+
+    bp.hear({ type: 'message', text: /.+/i }, (event) => {
+        // I'll be called always.. in all messages
+        console.log(event.raw.message.text);
     })
 
 
