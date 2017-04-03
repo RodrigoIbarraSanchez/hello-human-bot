@@ -7,6 +7,7 @@
     "botpress": "0.x",
     "botpress-api.ai": "^2.0.5",
     "botpress-botkit": "^1.0.5",
+    "botpress-hitl": "^1.0.7",
     "botpress-messenger": "^2.0.6",
     "botpress-rivescript": "^2.0.5",
     "botpress-scheduler": "^2.0.5",
