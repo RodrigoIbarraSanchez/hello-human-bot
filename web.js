@@ -2,6 +2,8 @@
 var express = require('express')
 var morgan = require("morgan")
 var path = require("path")
+//var Client = require('node-rest-client').Client;
+var unirest = require('unirest');
 
 // Settings
 var app = express()
@@ -9,8 +11,32 @@ app.set('port', 8000)
 app.set('view engine', 'pug')
 app.use(morgan("dev"))
 
+
 // Public folder
 app.use(express.static(path.join(__dirname, "../public")))
+
+/*var client = new Client();
+
+// direct way
+client.get("http://megbot.wtf/api", function (data, response) {
+    // parsed response body as js object
+    console.log(data);
+    // raw response
+    //console.log(response)
+});
+// set content-type header and data as json in args parameter
+var args = {
+    data: { test: "hello" },
+    headers: { "Content-Type": "application/json" }
+};
+
+client.post("http://megbot.wtf/api", args, function (data, response) {
+    // parsed response body as js object
+    console.log(data);
+    // raw response
+    //console.log(response);
+});*/
+
 
 /*app.use("/", function (req, res) {
     res.send(jsonContent.usuario_uno.first_name);
@@ -69,6 +95,13 @@ var contents = fs.readFileSync("data/botpress-messenger.profiles.json");
 var jsonContent = JSON.parse(contents);
 // Get Value from JSON
 //res.send("jsonContent:", jsonContent.usuario_uno.first_name);
+
+/*unirest.post('http://megbot.wtf/api')
+    .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
+    .send({ "firstName": "otroNombe", "lastName": "otroApellio", "email": "otomail@gmail.com" })
+    .end(function (response) {
+        console.log(response.body);
+    });*/
 
 // Error 404
 app.use(function(req, res, next){

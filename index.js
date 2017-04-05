@@ -1,4 +1,5 @@
 const Promise = require('bluebird')
+var unirest = require('unirest');
 module.exports = function(bp) {
     bp.middlewares.load()
 
@@ -167,8 +168,14 @@ module.exports = function(bp) {
         bp.messenger.sendAttachment(userId, type, url)
     })
 
-    bp.hear({ type: 'message', text: /.+/i }, (event) => {
+    bp.hear({ type: 'message', text: /.+/i }, (event, next) => {
         // I'll be called always.. in all messages
+        unirest.post('http://megbot.wtf/api')
+            .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
+            .send({ "firstName": "Shrek", "lastName": "Lopez", "email": "shrek@gmail.com" })
+            .end(function (response) {
+                console.log(response.body);
+            });
         console.log(event.raw.message.text);
     })
 

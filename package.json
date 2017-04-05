@@ -4,15 +4,17 @@
   "description": "my new bot",
   "main": "index.js",
   "dependencies": {
+    "body-parser": "^1.17.1",
     "botpress": "0.x",
     "botpress-api.ai": "^2.0.5",
     "botpress-botkit": "^1.0.5",
     "botpress-hitl": "^1.0.7",
     "botpress-messenger": "^2.0.6",
-    "botpress-rivescript": "^2.0.5",
     "botpress-scheduler": "^2.0.5",
+    "cors": "^2.8.3",
     "mongoose": "^4.9.2",
-    "node-rest-client": "^3.1.0"
+    "node-rest-client": "^3.1.0",
+    "unirest": "^0.5.1"
   },
   "scripts": {
     "start": "botpress start",
