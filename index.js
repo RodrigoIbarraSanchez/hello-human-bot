@@ -46,7 +46,10 @@ module.exports = function(bp) {
             },
             function () {
                 bp.messenger.sendText(event.user.id, "También puedes escribirme si necesitas que te recuerde algo y yo te escribiré de vuelta para recordarte.")
-            }
+            },
+            function () {
+                bp.messenger.sendText(event.user.id, "¡Muy bien, empecemos!")
+            },
             function () {
                 bp.messenger.sendText(event.user.id, "Cuál es tu primer clase y a qué hora? Ej. Programación - 1:00pm")
             }
