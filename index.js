@@ -170,15 +170,17 @@ module.exports = function(bp) {
 
     bp.hear({ type: 'message', text: /.+/i }, (event, next) => {
         // I'll be called always.. in all messages
-        unirest.post('http://megbot.wtf/api')
-            .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
-            .send({ "firstName": "Shrek", "lastName": "Lopez", "email": "shrek@gmail.com" })
-            .end(function (response) {
-                console.log(response.body);
-            });
-        console.log(event.raw.message.text);
-    })
+        
+        console.log("El mensaje: "+event.raw.message.text);
 
+        unirest.post('http://megbot.wtf/api')
+        .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
+        .send({ "firstName": event.raw.message.text, "lastName": "Lopez", "email": "shrek@gmail.com" })
+        .end(function (response) {
+            console.log(response.body);
+        });
+
+    })
 
     //Para que conteste cuando el usuario escribe cualquier cosa
     /*bp.hear({
