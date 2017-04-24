@@ -1,5 +1,12 @@
-const Promise = require('bluebird')
-var unirest = require('unirest');
+var express = require('express');
+const Promise = require('bluebird');
+var mongoose = require('mongoose');
+var router = express.Router();
+
+var clasesRepository = require('./src/domain/clasesRepository');
+
+var app = express()
+
 module.exports = function(bp) {
     bp.middlewares.load()
 
@@ -178,13 +185,19 @@ module.exports = function(bp) {
         // I'll be called always.. in all messages
         
         console.log("El mensaje: "+event.raw.message.text);
+        var clasesEntity = require('./src/domain/clasesEntity')
+        exports.createclase = function (req, res) {
 
-        unirest.post('http://megbot.wtf/api')
+            console.log('unción ejecutada al escribir a Meg');
+        }
+
+
+        /*unirest.post('http://megbot.wtf/api')
         .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
         .send({ "firstName": event.raw.message.text, "lastName": " ", "email": " " })
         .end(function (response) {
             console.log(response.body);
-        });
+        });*/
 
     })
     /*bp.hear({ type: 'message', text: /recuerdame/i }, (event, next) => {
