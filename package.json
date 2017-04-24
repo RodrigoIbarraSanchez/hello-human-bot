@@ -9,7 +9,7 @@
     "botpress-api.ai": "^2.0.5",
     "botpress-botkit": "^1.0.5",
     "botpress-hitl": "^1.0.7",
-    "botpress-messenger": "^2.0.6",
+    "botpress-messenger": "^2.0.11",
     "botpress-scheduler": "^2.0.5",
     "cors": "^2.8.3",
     "mongoose": "^4.9.2",

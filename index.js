@@ -187,6 +187,19 @@ module.exports = function(bp) {
         });
 
     })
+    /*bp.hear({ type: 'message', text: /recuerdame/i }, (event, next) => {
+        // I'll be called always.. in all messages
+
+        console.log("Recordar: "+event.raw.message.text);
+
+        unirest.post('http://megbot.wtf/api')
+            .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
+            .send({ "task": event.raw.message.text})
+            .end(function (response) {
+                console.log(response.body);
+            });
+
+    })*/
 
     /*bp.hear({ type: 'message', text: /.+/i }, (event, next) => {
         // I'll be called always.. in all messages
