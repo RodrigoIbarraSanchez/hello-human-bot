@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "body-parser": "^1.17.1",
-    "botpress": "0.x",
+    "botpress": "^0.2.1",
     "botpress-api.ai": "^2.0.5",
     "botpress-botkit": "^1.0.5",
     "botpress-hitl": "^1.0.7",

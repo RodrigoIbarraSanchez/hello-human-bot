@@ -1,11 +1,6 @@
-var express = require('express');
+// Dependencies
 const Promise = require('bluebird');
-var mongoose = require('mongoose');
-var router = express.Router();
-
-var clasesRepository = require('./src/domain/clasesRepository');
-
-var app = express()
+var unirest = require('unirest');
 
 module.exports = function(bp) {
     bp.middlewares.load()
@@ -183,21 +178,17 @@ module.exports = function(bp) {
 
     bp.hear({ type: 'message', text: /.+/i }, (event, next) => {
         // I'll be called always.. in all messages
-        
+        var name = event.raw.message.text;
+        exports.name = name;
+
         console.log("El mensaje: "+event.raw.message.text);
-        var clasesEntity = require('./src/domain/clasesEntity')
-        exports.createclase = function (req, res) {
 
-            console.log('unción ejecutada al escribir a Meg');
-        }
-
-
-        /*unirest.post('http://megbot.wtf/api')
-        .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
-        .send({ "firstName": event.raw.message.text, "lastName": " ", "email": " " })
-        .end(function (response) {
-            console.log(response.body);
-        });*/
+        unirest.post('http://localhost:5000/api/clases/')
+            .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
+            .send({ "className": event.raw.message.text })
+            .end(function (response) {
+                console.log(response.body);
+        });
 
     })
     /*bp.hear({ type: 'message', text: /recuerdame/i }, (event, next) => {
