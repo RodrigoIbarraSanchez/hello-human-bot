@@ -8,7 +8,7 @@ module.exports = {
 
   modulesConfigDir: process.env.BOTPRESS_CONFIG_DIR || './modules_config',
   disableFileLogs: false,
-  port: process.env.BOTPRESS_PORT || process.env.PORT || 3000,
+  port: process.env.BOTPRESS_PORT || 3000,
   optOutStats: false,
   notification: {
     file: 'notifications.json',
@@ -37,9 +37,9 @@ module.exports = {
     enabled: process.env.DATABASE === 'postgres',
     host: process.env.PG_HOST || '127.0.0.1',
     port: process.env.PG_PORT || 5432,
-    user: process.env.PG_USER || '',
-    password: process.env.PG_PASSWORD || '',
-    database: process.env.PG_DB || '',
+    user: process.env.PG_USER || 'rodrigo',
+    password: process.env.PG_PASSWORD || 'rOdrigODeveloper182',
+    database: process.env.PG_DB || 'megbotdb',
     ssl: process.env.PG_SSL || false
   }
 }

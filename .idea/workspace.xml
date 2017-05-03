@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf8179fb-3721-4693-a117-39e887c39214" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/config.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/domain/clasesEntity.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/domain/clasesRepository.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/infrastructure/routers/apiRouter.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/web.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/botfile.js" afterPath="$PROJECT_DIR$/botfile.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -30,11 +24,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="297">
               <caret line="178" column="40" lean-forward="false" selection-start-line="178" selection-start-column="40" selection-end-line="178" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="702">
+              <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="botfile.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/botfile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="674">
+              <caret line="40" column="61" lean-forward="false" selection-start-line="40" selection-start-column="42" selection-end-line="40" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -94,7 +108,6 @@
         <option value="$PROJECT_DIR$/views/index.pug" />
         <option value="$PROJECT_DIR$/test" />
         <option value="$PROJECT_DIR$/other.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/Procfile.txt" />
         <option value="$PROJECT_DIR$/data/rivescript/star.rive" />
         <option value="$PROJECT_DIR$/db.js" />
@@ -105,7 +118,6 @@
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/views/todos.pug" />
         <option value="$PROJECT_DIR$/views/goals.pug" />
-        <option value="$PROJECT_DIR$/botfile.js" />
         <option value="$PROJECT_DIR$/web.js" />
         <option value="$PROJECT_DIR$/src/config.js" />
         <option value="$PROJECT_DIR$/src/domain/clasesEntity.js" />
@@ -113,6 +125,8 @@
         <option value="$PROJECT_DIR$/src/infrastructure/routers/apiRouter.js" />
         <option value="$PROJECT_DIR$/src/domain/clasesRepository.js" />
         <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/botfile.js" />
       </list>
     </option>
   </component>
@@ -292,12 +306,12 @@
       <workItem from="1493190603052" duration="1383000" />
       <workItem from="1493737223173" duration="704000" />
       <workItem from="1493774625209" duration="2834000" />
-      <workItem from="1493793711577" duration="597000" />
+      <workItem from="1493793711577" duration="1201000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135770000" />
+    <option name="totallyTimeSpent" value="136374000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="23" width="1920" height="1053" extended-state="6" />
@@ -526,31 +540,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/index.pug" />
     <entry file="file://$PROJECT_DIR$/db.js" />
-    <entry file="file://$PROJECT_DIR$/botfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="16" column="8" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Procfile.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/modernizr.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -570,6 +563,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="178" column="40" lean-forward="false" selection-start-line="178" selection-start-column="40" selection-end-line="178" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/botfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="674">
+          <caret line="40" column="61" lean-forward="false" selection-start-line="40" selection-start-column="42" selection-end-line="40" selection-end-column="61" />
           <folding />
         </state>
       </provider>
