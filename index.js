@@ -183,7 +183,7 @@ module.exports = function(bp) {
 
         console.log("El mensaje: "+event.raw.message.text);
 
-        unirest.post('http://localhost:5000/api/clases/')
+        unirest.post('https://apimegbot.herokuapp.com/api/clases/ ')
             .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
             .send({ "className": event.raw.message.text })
             .end(function (response) {
