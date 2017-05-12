@@ -29,7 +29,7 @@ module.exports = function(bp) {
 
         const WELCOME_SENTENCES = [
             function(){
-                bp.messenger.sendText(event.user.id, "Soy un asistente virtual y estoy aquí para ayudarte.", { typing: true })
+                bp.messenger.sendText(event.user.id, "Hola " + event.user.first_name + "! soy un asistente virtual y estoy aquí para ayudarte.", { typing: true })
             },
             function(){
                 bp.messenger.sendAttachment(event.user.id, 'image', 'https://media.giphy.com/media/tZ9baZRizt3pu/giphy.gif')
@@ -176,20 +176,17 @@ module.exports = function(bp) {
         bp.messenger.sendAttachment(userId, type, url)
     })
 
-    bp.hear({ type: 'message', text: /.+/i }, (event, next) => {
-        // I'll be called always.. in all messages
-        var name = event.raw.message.text;
-        exports.name = name;
-
-        console.log("El mensaje: "+event.raw.message.text);
-
-        unirest.post('https://apimegbot.herokuapp.com/api/clases/ ')
+    bp.hear({ type: 'message', text: /crear evento/i }, (event, next) => {
+        //exports.name = name;
+        var evento = event.raw.message.text.replace('crear evento', '');
+        unirest.post('https://apimegbot.herokuapp.com/api/clases/')
             .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
-            .send({ "className": event.raw.message.text })
+            .send({"className": evento})
+            //.send({ "className": ["dia","hora","actividad"]})
             .end(function (response) {
                 console.log(response.body);
+                console.log("El mensaje: "+event.raw.message.text.replace('crear evento', ''));
         });
-
     })
     /*bp.hear({ type: 'message', text: /recuerdame/i }, (event, next) => {
         // I'll be called always.. in all messages
