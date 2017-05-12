@@ -181,8 +181,8 @@ module.exports = function(bp) {
         var evento = event.raw.message.text.replace('crear evento', '');
         unirest.post('https://apimegbot.herokuapp.com/api/clases/')
             .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
-            .send({"className": evento})
-            //.send({ "className": ["dia","hora","actividad"]})
+            //.send({"className": evento})
+            .send({ "className": event.raw.message.text.replace('crear evento', '')})
             .end(function (response) {
                 console.log(response.body);
                 console.log("El mensaje: "+event.raw.message.text.replace('crear evento', ''));
