@@ -2,7 +2,7 @@
 const Promise = require('bluebird');
 var unirest = require('unirest');
 
-module.exports = function(bp) {
+module.exports = function (bp) {
     bp.middlewares.load()
 
     /*bp.hear({ type: 'postback', text: 'GET_STARTED' }, (event) => {
@@ -28,20 +28,20 @@ module.exports = function(bp) {
     bp.hear({ type: 'postback', text: 'GET_STARTED' }, (event) => {
 
         const WELCOME_SENTENCES = [
-            function(){
+            function () {
                 bp.messenger.sendText(event.user.id, "Hola " + event.user.first_name + "! soy un asistente virtual y estoy aquí para ayudarte.", { typing: true })
             },
-            function(){
+            function () {
                 bp.messenger.sendAttachment(event.user.id, 'image', 'https://media.giphy.com/media/tZ9baZRizt3pu/giphy.gif')
             },
-            function(){
+            function () {
                 bp.messenger.sendText(event.user.id, "No soy humano, pero puedo ayudarte a hacer tu vida más productiva.", { typing: true })
             },
             function () {
-                bp.messenger.sendText(event.user.id, "Se que tienes cosas muy importantes por hacer, así que por eso estoy aquí para ayudarte en lo que sea que necesites.", { typing:true })
+                bp.messenger.sendText(event.user.id, "Se que tienes cosas muy importantes por hacer, así que por eso estoy aquí para ayudarte en lo que sea que necesites.", { typing: true })
             },
             function () {
-                bp.messenger.sendText(event.user.id, "Puedo leerte, así que puedes escribirme para decirme tus actividades, yo me encargaré de que aproveches tu tiempo libre.", { typing:true })
+                bp.messenger.sendText(event.user.id, "Puedo leerte, así que puedes escribirme para decirme tus actividades, yo me encargaré de que aproveches tu tiempo libre.", { typing: true })
             },
             function () {
                 bp.messenger.sendAttachment(event.user.id, 'image', 'https://media.giphy.com/media/5VKbvrjxpVJCM/giphy.gif')
@@ -111,13 +111,13 @@ module.exports = function(bp) {
                     payload: 'DEVELOPER_DEFINED_PAYLOAD_FOR_OPTION_1'
                 },
                 {
-                    content_type:"text",
-                    title:"opción uno",
+                    content_type: "text",
+                    title: "opción uno",
                     payload: 'DEVELOPER_DEFINED_PAYLOAD_FOR_OPTION_2'
                 },
                 {
-                    content_type:"text",
-                    title:"opción tres",
+                    content_type: "text",
+                    title: "opción tres",
                     payload: 'DEVELOPER_DEFINED_PAYLOAD_FOR_OPTION_3'
                 }
             ],
@@ -126,11 +126,11 @@ module.exports = function(bp) {
         }
 
         bp.messenger.sendText(userId, text, options)
-        .then(() => {
-            bp.hear({platform: 'facebook', type: 'postback', text: 'DEVELOPER_DEFINED_PAYLOAD_FOR_OPTION_1'}, (event) => {
-                bp.messenger.sendText(event.user.id, 'Elegiste la opción 1!');
-            });
-    })
+            .then(() => {
+                bp.hear({ platform: 'facebook', type: 'postback', text: 'DEVELOPER_DEFINED_PAYLOAD_FOR_OPTION_1' }, (event) => {
+                    bp.messenger.sendText(event.user.id, 'Elegiste la opción 1!');
+                });
+            })
 
 
 
@@ -180,13 +180,13 @@ module.exports = function(bp) {
         //exports.name = name;
         var evento = event.raw.message.text.replace('crear evento', '');
         unirest.post('https://apimegbot.herokuapp.com/api/clases/')
-            .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
+            .headers({ 'Accept': 'application/json', 'Content-Type': 'application/json' })
             //.send({"className": evento})
-            .send({ "className": event.raw.message.text.replace('crear evento', '')})
+            .send({ "className": event.raw.message.text.replace('crear evento', '') })
             .end(function (response) {
                 console.log(response.body);
-                console.log("El mensaje: "+event.raw.message.text.replace('crear evento', ''));
-        });
+                console.log("El mensaje: " + event.raw.message.text.replace('crear evento', ''));
+            });
     })
     /*bp.hear({ type: 'message', text: /recuerdame/i }, (event, next) => {
         // I'll be called always.. in all messages
